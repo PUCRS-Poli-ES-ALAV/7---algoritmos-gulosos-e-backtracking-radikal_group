@@ -41,14 +41,19 @@ def main():
             start = time.time()
             # List of coins from change
             change_coins = brute_force(cost, paid, coin_set)
+            end = time.time()
+            
             change_value = sum(change_coins)
             
             # List with the number of coins of each type
             change_coins_count = count_coin_types(change_coins,coin_set)
             
             for i in range(len(change_coins_count)):
+                if (i == len(change_coins_count)-1):
+                    print (coin_set[i], "x", change_coins_count[i])
+                    break
                 if (change_coins_count[i]!= 0):
-                    print ("Coin:", coin_set[i], "Count:", change_coins_count[i])
+                    print (coin_set[i], "x", change_coins_count[i], ",", end=" ")
                 
 
             unpaid_change = cost - paid - change_value
@@ -56,7 +61,7 @@ def main():
                 print ("Unpaid Change", unpaid_change)
                 
             print("Iterations:",iterations)
-            print("Time:", time.time() - start, "seconds\n")
+            print("Time:", end - start, "seconds\n")
 
 if __name__ == "__main__":
     main()
