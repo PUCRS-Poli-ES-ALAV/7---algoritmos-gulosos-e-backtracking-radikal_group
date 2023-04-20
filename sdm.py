@@ -6,7 +6,6 @@ def Sort_Tuple(tup_list):
     # getting length of list of tuples
     lst = len(tup_list)
     for i in range(0, lst):
- 
         for j in range(0, lst-i-1):
             if (tup_list[j][1] > tup_list[j + 1][1]):
                 temp = tup_list[j]
@@ -29,7 +28,6 @@ def sdm_greedy(s: list[int], f: list[int]) -> list[int]:
 
 def main():
     global iterations
-    
     iterations = 0
 
     s = [4, 6, 13, 4, 2, 6, 7,  9,  1, 3,  9]
@@ -50,4 +48,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-        
